@@ -14,9 +14,10 @@ func findLetterIndex (_ array:[String], letter:String) -> Int? {
 
 findLetterIndex(abcArray, letter: "d")
 
-func findGenericIndex<T:Comparable> (_ array:[T], letter:T) -> Int? {
+// Make a generic function to handle both arrays defined above.
+func findGenericIndex<T:Comparable> (_ array:[T], key:T) -> Int? {
     for(index, element) in array.enumerated() {
-        if element == letter {
+        if element == key {
             return index
         }
     }
@@ -24,5 +25,5 @@ func findGenericIndex<T:Comparable> (_ array:[T], letter:T) -> Int? {
     return nil
 }
 
-findGenericIndex(abcArray, letter: "f")
-findGenericIndex(intArray, letter: 742)
+findGenericIndex(abcArray, key: "f")
+findGenericIndex(intArray, key: 742)
